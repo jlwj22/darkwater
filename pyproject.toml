@@ -1,0 +1,51 @@
+[project]
+name = "darkwater"
+version = "0.1.0"
+description = "Detecting anomalous vessel behavior from public AIS data."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "duckdb>=1.1",
+    "polars>=1.0",
+    "pyarrow>=17.0",
+    "pandas>=2.2",
+    "geopandas>=1.0",
+    "shapely>=2.0",
+    "h3>=4.0",
+    "pandera>=0.20",
+    "numpy>=1.26",
+    "scikit-learn>=1.5",
+    "statsmodels>=0.14",
+    "matplotlib>=3.9",
+    "seaborn>=0.13",
+    "httpx>=0.27",
+    "pyyaml>=6.0",
+    "tqdm>=4.66",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+    "pre-commit>=3.8",
+    "nbstripout>=0.7",
+    "jupyterlab>=4.2",
+    "ipykernel>=6.29",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/darkwater"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

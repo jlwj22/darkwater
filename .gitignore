@@ -1,0 +1,19 @@
+# data never goes in git
+data/**
+!data/**/.gitkeep
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# notebooks
+.ipynb_checkpoints/
+
+# tooling
+mlruns/
+.env
+.DS_Store
