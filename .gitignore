@@ -1,6 +1,6 @@
 # data never goes in git
-data/**
-!data/**/.gitkeep
+data/*/*
+!data/*/.gitkeep
 
 # python
 __pycache__/
